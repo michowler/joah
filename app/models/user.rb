@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+#https://gist.github.com/thebucknerlife/10090014	
 	validates :email, uniqueness: true, presence: true
 	validates :full_name, presence: true
 	validate :password_validator, :email_validator
