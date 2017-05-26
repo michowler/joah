@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
 
 	def password_validator
-	    unless self.password.length < 6
+	    unless self.password.length >= 6
 	      errors.add(:password, "is too short")
 	    end
 	end
