@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
 	has_secure_password
 
+	has_many :products
+
 	def password_validator
 	    unless self.password.length >= 6
 	      errors.add(:password, "is too short")

@@ -1,0 +1,23 @@
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+        <% @products.each do |p| %>
+           <div class="column">
+             <div class="col-sm-6 col-md-4">
+               <div class="thumbnail">
+               <% if p.photos? %>
+               <img><%= image_tag p.photos.first.medium, class:"img-response" %></img>
+               <% else %> 
+                 <img src="..." alt="...">
+               <%end%>
+                 <div class="caption">
+                   <h4><%= link_to p.title, product_path(p.id) %></h4>
+                   <p><span class="price">RM<%= p.price %></span></p>   
+                   <p><a href="/products/<%=p.id%>" class="btn btn-primary" role="button">Buy now</a></p>
+                 </div>
+               </div>
+             </div>
+           </div>
+        <% end %>
+         </div>
+  <% end %>
