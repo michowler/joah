@@ -11,9 +11,9 @@
   <body>
   
 	  <% if current_user %>
-	    Signed in as <%= current_user.full_name %> | <%= link_to "Logout", '/logout' %>
+	    Signed in as <%= current_user.full_name %> | <%= link_to 'Log Out', sign_out_path, method: :delete %>
 	  <% else %>
-	    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+	    <%= link_to 'Login', '/sign_in' %> | <%= link_to 'Signup', '/sign_up' %>
 	  <% end %>
 
 	  <div class="container">

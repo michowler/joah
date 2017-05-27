@@ -33,12 +33,15 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem "figaro"
+gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem "fog"
+gem "factory_girl_rails", "~> 4.0"
 gem 'braintree'
 gem 'sidekiq'
 gem 'foreman'
@@ -51,6 +54,7 @@ gem 'pg_search'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'capybara'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'rspec', '~> 3.1.0'
   gem 'guard-rspec', require: false

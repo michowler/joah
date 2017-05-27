@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 	    redirect_to '/'
 	  else
 	  	flash[:danger] = user.errors.full_messages
-	    redirect_to '/signup'
+	    redirect_to '/sign_up'
 	  end
 	end
 
