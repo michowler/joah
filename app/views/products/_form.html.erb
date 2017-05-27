@@ -1,0 +1,39 @@
+<div class="title-field">
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+</div>
+
+<div class="upload-field">
+  <%= form.label :upload %>
+  <%= form.file_field :photos, multiple: true %>
+</div>  
+
+<div class="description-field">
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+</div>
+
+<div class="location-field">
+  <%= form.label :location %>
+  <%= form.text_field :location %>
+</div>
+
+<div class="category-type-field">
+   <%= form.label :category_type %>
+   <%= form.select :category_type, options_for_select([["vehicles", :vehicles], ["electronics", :electronics], ["sports", :sports], ["travel", :travel], ["home", :home], ["services", :services],["others", :others]])%>
+</div>
+
+<div class="area-field">
+   <%= form.label :area %>
+   <%= form.select :area, options_for_select([["klang valley", :klang_valley], ["subang", :subang], ["kepong", :kepong], ["petaling jaya", :petaling_jaya], ["shah alam", :shah_alam]])%>
+</div>
+
+<div class="price-field">
+  <%= form.label :price %>
+  <%= form.number_field :price, min: 1, step: 2 %>
+</div>
+
+<div class="submit-field">
+  <%= form.submit %>
+</div>
+  

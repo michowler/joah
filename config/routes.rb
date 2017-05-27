@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	root :to => "pages#index"
+
+	resources :users do
+	   resources :products
+	end
+
+	resources :products
 
 	get '/sign_in' => 'sessions#new', as: "sign_in"
 	post '/sign_in' => 'sessions#create'

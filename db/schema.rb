@@ -10,17 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527161938) do
+ActiveRecord::Schema.define(version: 20170527180423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authorizations", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
+  create_table "products", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",         null: false
+    t.string   "description"
+    t.integer  "area"
+    t.integer  "category_type"
+    t.integer  "price",         null: false
+    t.string   "location"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["area"], name: "index_products_on_area", using: :btree
+    t.index ["category_type"], name: "index_products_on_category_type", using: :btree
+    t.index ["description"], name: "index_products_on_description", using: :btree
+    t.index ["location"], name: "index_products_on_location", using: :btree
+    t.index ["price"], name: "index_products_on_price", using: :btree
+    t.index ["title"], name: "index_products_on_title", using: :btree
+    t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +47,5 @@ ActiveRecord::Schema.define(version: 20170527161938) do
     t.index ["full_name"], name: "index_users_on_full_name", using: :btree
   end
 
+  add_foreign_key "products", "users"
 end
