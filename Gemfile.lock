@@ -39,6 +39,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
     autoprefixer-rails (7.1.1)
       execjs
@@ -47,10 +49,17 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    braintree (2.74.0)
+    braintree (2.76.0)
       builder (>= 2.0.0)
     builder (3.2.3)
     byebug (9.0.6)
+    capybara (2.14.0)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -69,6 +78,11 @@ GEM
     erubis (2.7.0)
     excon (0.55.0)
     execjs (2.7.0)
+    factory_girl (4.8.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
     faker (1.7.3)
       i18n (~> 0.5)
     faraday (0.11.0)
@@ -132,7 +146,7 @@ GEM
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-core (1.44.2)
+    fog-core (1.44.3)
       builder
       excon (~> 0.49)
       formatador (~> 0.2)
@@ -251,7 +265,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    lumberjack (1.0.11)
+    lumberjack (1.0.12)
     mail (2.6.5)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
@@ -271,6 +285,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth (0.5.3)
     oauth2 (1.3.1)
       faraday (>= 0.8, < 0.12)
       jwt (~> 1.0)
@@ -282,9 +297,15 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (4.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-oauth2 (1.4.0)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    omniauth-twitter (1.4.0)
+      omniauth-oauth (~> 1.1)
+      rack
     pg (0.20.0)
     pg_search (2.0.1)
       activerecord (>= 4.2)
@@ -294,6 +315,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (2.0.5)
     puma (3.8.2)
     rack (2.0.3)
     rack-protection (2.0.0)
@@ -407,6 +429,8 @@ GEM
     websocket-extensions (0.1.2)
     will_paginate (3.1.5)
     xml-simple (1.1.5)
+    xpath (2.1.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -416,8 +440,10 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   braintree
   byebug
+  capybara
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
+  factory_girl_rails (~> 4.0)
   faker
   figaro
   fog
@@ -428,6 +454,8 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mini_magick
   omniauth-facebook
+  omniauth-oauth2 (~> 1.3.1)
+  omniauth-twitter
   pg (~> 0.18)
   pg_search
   puma (~> 3.0)
