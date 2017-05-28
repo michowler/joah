@@ -7,7 +7,8 @@ class ProductsController < ApplicationController
 	def index
 		# results = PgSearch.multisearch(params[:search])
   #       @products = Listing.where(id: results.pluck(:searchable_id))
-	    @products = Product.all	  
+	    @products = Product.all
+	    @products = Product.quick_search(params[:search])	  
 	end
 	
 	def new
@@ -59,7 +60,7 @@ class ProductsController < ApplicationController
 
 	def require_login
 	  unless current_user
-	    flash[:error] = "You must be logged in to access this section"
+	    flash[:danger] = "You must be logged in to access this section"
 	    redirect_to sign_in_path # halts request cycle
 	  end
 	end

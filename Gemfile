@@ -38,6 +38,7 @@ gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'faker'
+gem 'filterrific'
 gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
