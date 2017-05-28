@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+	include PgSearch
+	pg_search_scope :quick_search, against: [:title, :description, :price, :area, :location, :category_type]
+
 	belongs_to :user
 	#serialize :photos, Array 
 	#mount_uploaders :photos, PhotoUploader

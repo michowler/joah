@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+	include PgSearch
+	#multisearchable :against => [:title, :price]
 
 	validates :full_name, :email, :presence => true
 	validates_uniqueness_of :email
