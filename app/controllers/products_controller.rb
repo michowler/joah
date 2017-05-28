@@ -2,11 +2,11 @@ class ProductsController < ApplicationController
 	#before_action :logged_in_user, only: [:new, :create]
 	before_action :require_login, only: [:new, :create]
 	before_action :find_product, only: [:show, :delete, :edit, :update]
+	#respond_to :html, :js
+	#https://launchschool.com/blog/the-detailed-guide-on-how-ajax-works-with-ruby-on-rails
 
 
 	def index
-		# results = PgSearch.multisearch(params[:search])
-  #       @products = Listing.where(id: results.pluck(:searchable_id))
 	    @products = Product.all
 	    @products = Product.quick_search(params[:search])	  
 	end
