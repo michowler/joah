@@ -1,0 +1,8 @@
+<div class="container">
+  
+
+  <h1>Welcome <%= @user.full_name %></h1>
+  <div><%= link_to "Edit Profile", edit_user_path(@user), class:"btn btn-primary"%></div><br>
+  <div><%= link_to "Sell", new_product_path, class:"btn btn-primary" %></div>
+
+</div>

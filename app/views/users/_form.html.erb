@@ -1,0 +1,33 @@
+<br>
+<form name="registration",>
+  <div class="name-field">
+    <p class="login-input">EDIT NAME:</p>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <br>
+  <div class="avatar">
+     <p class="login-input">EDIT PICTURE:</p><i> (Optional)</i></p>
+    <%= form.file_field :avatar %>
+  </div> 
+
+  <br>
+  <div class="email-field">
+    <p class="login-input">E-MAIL:</p>
+    <%= form.text_field :email %>
+  </div>
+
+  <br>
+  <div class="password-field">
+    <p class="login-input">PASSWORD:</p>
+    <%= form.password_field :password %>
+  </div>    
+
+  <br>
+  <div class="submit-field">
+    <%= form.submit %>
+  </div>
+</form>
+
+
+

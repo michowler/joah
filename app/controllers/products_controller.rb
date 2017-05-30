@@ -13,9 +13,6 @@ class ProductsController < ApplicationController
 	
 	def new
 		@product = Product.new
-		respond_to do |format|
-		     format.html # new.html.erb
-		end
 	end
 
 	def create
@@ -42,7 +39,7 @@ class ProductsController < ApplicationController
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		redirect_to @product.user
+		redirect_to @product
 	end
 
 	def show
