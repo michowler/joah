@@ -1,11 +1,12 @@
 class OrderItemsController < ApplicationController
+  #respond_to :html, :js
 
     def create
       @order = current_order
       @order_item = @order.order_items.new(order_item_params)
       @order.save
-     
       session[:order_id] = @order.id
+      redirect_to "/cart"
     end
 
     def update
@@ -20,6 +21,7 @@ class OrderItemsController < ApplicationController
       @order_item = @order.order_items.find(params[:id])
       @order_item.destroy
       @order_items = @order.order_items
+      redirect_to "/cart"
     end
 
     private

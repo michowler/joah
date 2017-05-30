@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530035907) do
+ActiveRecord::Schema.define(version: 20170530160756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170530035907) do
     t.boolean  "active"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.json     "avatars"
     t.index ["title"], name: "index_products_on_title", using: :btree
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170530035907) do
     t.datetime "updated_at",      null: false
     t.string   "provider"
     t.string   "uid"
+    t.json     "avatars"
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["full_name"], name: "index_users_on_full_name", using: :btree
   end

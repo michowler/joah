@@ -5,8 +5,8 @@ class Product < ApplicationRecord
 	belongs_to :user
 	has_many :order_items
 	default_scope { where(active: true) }
-	#serialize :photos, Array 
-	#mount_uploaders :photos, PhotoUploader
+	serialize :photos, Array 
+	mount_uploaders :photos, PhotoUploader
 
 	enum area: [:kepong, :petaling_jaya, :klang_valley, :subang, :shah_alam]
 	enum category_type: [:vehicles, :electronics, :sports, :travel, :home, :others, :services]
