@@ -1,1 +1,1 @@
-<span class=" btn-link glyphicon glyphicon-shopping-cart" ></span><%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link"%>
+<button type="button"><span class="glyphicon glyphicon-shopping-cart"></span><%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn "%><span class="badge"><%=current_order.order_items.size%></span></button>
