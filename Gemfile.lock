@@ -479,6 +479,7 @@ DEPENDENCIES
   figaro
   filterrific
   fog
+  font-awesome-rails
   foreman
   guard-rspec
   jbuilder (~> 2.5)

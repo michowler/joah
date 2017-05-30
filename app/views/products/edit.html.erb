@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <br>
+         <div style="font-size: 30px;">Edit Product</div>
+         <br>
+  	      <%= form_for @product do |form| %>
+            <%= render partial: '/products/form', object: form %>
+  	      <%end%>
+      </div>
+       
+       <div class="col-md-6 right">
+       </div> 
+
+    </div>
+  </div>
+</div>
