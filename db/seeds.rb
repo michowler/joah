@@ -33,6 +33,9 @@ ActiveRecord::Base.transaction do
   end
 end
 
+Order.delete_all
+
+
 # Product.delete_all
 # Product.create! id: 1, name: "Banana", price: 0.49, active: true
 # Product.create! id: 2, name: "Apple", price: 0.29, active: true
