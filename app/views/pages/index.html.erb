@@ -1,23 +1,25 @@
-<h1>JOAHH</h1>
+<h1 style="margin:auto;text-align: center">JOAHH</h1>
+
+<div class="container">
 
 <%= form_tag(products_path, :method => "get") do %>
   <%= label_tag(:search, "Search:") %>
   <%= text_field_tag(:search) %>
   <%= submit_tag "Search", :name => nil %>
 <%end%>
+<br>
 
-<div class="container">
 	<div class="row">
 	   <div class="col-md-12">
-		<% @products.each do |l| %>
+		<% @products.each do |p| %>
 	     <div class="column">
 	       <div class="col-sm-6 col-md-4">
 	         <div class="thumbnail">
 	        
 	           <div class="caption">
-	             <h4><%= link_to l.title, product_path(l.id) %></h4>
-	             <p><span class="price">RM<%= l.price %></span></p>		
-	             <p><a href="/listings/<%=l.id%>" class="btn btn-primary" role="button">Book now</a></p>
+	             <h4><%= link_to p.title, product_path(p.id) %></h4>
+	             <p><span class="price">RM<%= p.price %></span></p>		
+	             <p><a href="/products/<%=p.id%>" class="btn btn-primary" role="button">BUY</a></p>
 	           </div>
 	         </div>
 	       </div>
@@ -26,4 +28,4 @@
 	   </div>
 	</div>
 </div>
-<%= will_paginate @products, previous_label: "Back", next_label: "More", inner_window: 1, outer_window: 0 %>
+<%= will_paginate @products, renderer: BootstrapPagination::Rails, previous_label: "Back", next_label: "More", inner_window: 1, outer_window: 0 %>

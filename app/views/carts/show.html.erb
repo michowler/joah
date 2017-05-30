@@ -1,0 +1,7 @@
+<div class="shopping-cart">
+  <%= render "shopping_cart" %>
+</div>  
+  <div class="cart_total">Total: RM<%=current_order.subtotal%>0</div>
+  <span style= "float:right"><%= link_to "Make Payment", braintree_new_path, class:"btn btn-primary" %></span>
+  <%= will_paginate @order_items, renderer: BootstrapPagination::Rails, previous_label: "Back", next_label: "More", inner_window: 1, outer_window: 0, class:"shopping-cart" %>
+

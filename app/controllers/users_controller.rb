@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	  user = User.new(user_params)
 	  if user.save
 	    session[:user_id] = user.id
-	    flash[:success] = "success"
+	    flash[:success] = "Hi, welcome to Joahh"
 	    redirect_to '/'
 	  else
 	  	flash[:danger] = user.errors.full_messages

@@ -15,6 +15,7 @@ gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
+#gem 'foundation-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -33,22 +34,33 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+#security
 gem "figaro"
+#access throught other platform for user authentication
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+#faker for seeding info
 gem 'faker'
+#filter
 gem 'filterrific'
+gem 'pg_search'
+#pagination
+gem 'will_paginate-bootstrap'
 gem 'will_paginate', '~> 3.1.0'
+#images
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem "fog"
+#rspec test info
 gem "factory_girl_rails", "~> 4.0"
+#rails  for prod deployment
 gem 'braintree'
 gem 'sidekiq'
 gem 'foreman'
 gem 'rails_12factor', group: :production
-gem 'pg_search'
+#words
+gem 'time_ago_in_words'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
