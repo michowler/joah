@@ -5,14 +5,17 @@ class ProductsController < ApplicationController
 	#respond_to :html, :js
 	#https://launchschool.com/blog/the-detailed-guide-on-how-ajax-works-with-ruby-on-rails
 
-
 	def index
 	    @products = Product.all
-	    @products = Product.quick_search(params[:search])	  
+	    @products = Product.quick_search(params[:search])
+	     
 	end
 	
 	def new
 		@product = Product.new
+		respond_to do |format|
+		     format.html # new.html.erb
+		end
 	end
 
 	def create
@@ -30,7 +33,6 @@ class ProductsController < ApplicationController
 	def update
        @product.update(product_params)
        @product.user_id = current_user.id
-       
        redirect_to @product
 	end
 
@@ -44,8 +46,11 @@ class ProductsController < ApplicationController
 	end
 
 	def show
-		@user
-		@products = Product.all
+		@products = Product.find(params[:id])
+		@order = current_order
+		@order_item = @order.order_items.new
+		@order.save
+		session[:order_id] = @order.id
 		
 	end
 

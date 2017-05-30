@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user = {}
 ActiveRecord::Base.transaction do
-  20.times do 
+  30.times do 
     user['full_name'] = Faker::Name.first_name 
     user['email'] = Faker::Internet.email
     user['password'] = '123123'
@@ -26,10 +26,22 @@ ActiveRecord::Base.transaction do
   	product[:category_type] = rand(0..6)
   	product[:price] = rand(80..500)
   	product[:location] = Faker::Address.street_address
+    product[:active] = true
   	product['user_id'] = uids.sample
 
   	Product.create(product)
   end
 end
+
+# Product.delete_all
+# Product.create! id: 1, name: "Banana", price: 0.49, active: true
+# Product.create! id: 2, name: "Apple", price: 0.29, active: true
+# Product.create! id: 3, name: "Carton of Strawberries", price: 1.99, active: true
+
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"
 
 

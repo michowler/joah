@@ -27,9 +27,9 @@ class User < ApplicationRecord
 	  where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
 	    user.provider = auth.provider
 	    user.uid = auth.uid
-	    user.full_name = auth.info.name unless user.full_name != nil
+	    user.full_name = auth.info.name unless user.full_name = nil
 	    user.email =  SecureRandom.hex + '@example.com' unless user.email = nil
-	    user.password = SecureRandom.urlsafe_base64 unless user.password != nil
+	    user.password = SecureRandom.urlsafe_base64 unless user.password = nil
 	    user.save!
 	  end
 	end

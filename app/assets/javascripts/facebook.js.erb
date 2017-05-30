@@ -2,14 +2,14 @@ jQuery(function() {
   $('body').prepend('<div id="fb-root"></div>');
   return $.ajax({
     url: window.location.protocol + "//connect.facebook.net/en_US/sdk.js",
-    dataType: 'script',
-    cache: true
+    dataType: 'script', //expected from server
+    cache: true //indicating whether the browser should cache the requested pages
   });
 });
 
 window.fbAsyncInit = function() {
   FB.init({
-    appId: 'your_facebook_app_id_goes_here',
+    appId: '1950135798535312',
     version: 'v2.3',
     cookie: true
   });

@@ -1,41 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Joahh</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= content_for?(:title) ? yield(:title) : "JOAHH" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
 
     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Joahh</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <% if logged_in? %>
-            <li class="active"><a href="#"><%= link_to "Sell", new_product_path %></a></li>
-          <% end %>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-         <% if logged_in? %>
-          <li><a href="/"><span class="glyphicon glyphicon-user"></span><%= current_user.full_name %></a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span><%= link_to 'Log Out', sign_out_path, method: :delete %></a></li>
-          <% else %>
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= link_to 'Login', '/sign_in' %></a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span><%= link_to 'Signup', '/sign_up' %></a></li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">JOAHH</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <% if logged_in? %>
+                <li class="active"><a href="#"><%= link_to "Sell", new_product_path %></a></li>
+              <% end %>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+             <% if logged_in? %>
+              <li><a href="/"><span class="glyphicon glyphicon-user"></span><%= current_user.full_name %></a></li>
+              
+               <li class="cart-text"><%= render 'layouts/cart_text' %></li>
+               <li><a href="#" class="glyphicon glyphicon-log-out"><%= link_to 'Logout', sign_out_path, method: :delete %></a></li>
+              <% else %>
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= link_to 'Login', '/sign_in' %></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span><%= link_to 'Signup', '/sign_up' %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
 
-	  <div class="container">
-      <%= flash_messages %>
-      <%= yield %>
-    </div>
-   
+        <div class="container">
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+
+
+
   </body>
 </html>
