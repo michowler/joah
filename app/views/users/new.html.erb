@@ -1,11 +1,11 @@
 <div class="container">
 	<h1>Signup</h1>
 
-	<%= form_for :user, url: '/users' do |f| %>
+	<%= form_for :user, url: '/users', id: 'signup-form' do |f| %>
 
-	  Name: <%= f.text_field :full_name %><br>
-	  Email: <%= f.text_field :email %><br>
-	  Password: <%= f.password_field :password %><br>
+	  Name: <%= f.text_field :full_name, required: true %><br>
+	  Email: <%= f.text_field :email, required: true %><br>
+	  Password: <%= f.password_field :password, required: true %><br>
 	  <%= f.submit "Submit" %>
 
 	<% end %>
