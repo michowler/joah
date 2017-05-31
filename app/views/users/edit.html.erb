@@ -1,9 +1,7 @@
-<div class="container">
+<div class="container" style="border:solid;padding: 20px; text-align: center;width: 30%; height:50%">
 <h2>Edit profile</h2>
-<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
   <%= form_for current_user do |form| %>
     <%= render partial: '/users/form', object: form %>
   <% end %>
-</div>
 </div>
 
