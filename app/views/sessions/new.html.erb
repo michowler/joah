@@ -4,8 +4,8 @@
 	<%= form_tag '/sign_in' do %>
 
 	  Email: <%= text_field_tag :email, required: true %><br>
-	  Password: <%= password_field_tag :password, required: true %>
-	  <%= submit_tag "Submit" %>
+	  Password: <%= password_field_tag :password, required: true %><br>
+	  <%= submit_tag "Submit", class: "btn btn-default" %>
 
 	<% end %>
 	No account? Signup <%= link_to "here", sign_up_path%>
