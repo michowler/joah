@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require cable
 //= require_tree .
+
+
+$(function() {
+   $('#dangerflash').delay(1000).fadeIn('fast', function() {
+      $(this).delay(500).fadeOut();
+   });
+    $('#successflash').delay(1000).fadeIn('fast', function() {
+      $(this).delay(500).fadeOut();
+   });
+    $(".alert" ).fadeOut(500);
+});
