@@ -1,12 +1,14 @@
-<h1>Login</h1>
+<div class="container">
+	<h1>Login</h1>
 
-<%= form_tag '/sign_in', remote: true do %>
+	<%= form_tag '/sign_in', remote: true do %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+	  Email: <%= text_field_tag :email %><br>
+	  Password: <%= password_field_tag :password %>
+	  <%= submit_tag "Submit" %>
 
-<% end %>
+	<% end %>
 
-<%= button_to "Sign in with FaceBook", "/auth/facebook", :class => "btn btn-default", :method => :get %>
-<%= link_to 'Sign in with Twitter', '/auth/twitter', :class => "btn btn-default", :method => :get %>
+	<%= button_to "Sign in with FaceBook", "/auth/facebook", :class => "btn btn-default", :method => :get %>
+	<%= link_to 'Sign in with Twitter', '/auth/twitter', :class => "btn btn-default", :method => :get %>
+</div>

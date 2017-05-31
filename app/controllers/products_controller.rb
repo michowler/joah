@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
 	#https://launchschool.com/blog/the-detailed-guide-on-how-ajax-works-with-ruby-on-rails
 
 	def index
-	    @products = Product.all
-	    @products = Product.quick_search(params[:search])
+	    @products = Product.all.paginate(:page => params[:page], :per_page => 6).order('id DESC')
+	    @products = Product.quick_search(params[:search]).paginate(:page => params[:page], :per_page => 6).order('id DESC')
 	     
 	end
 	

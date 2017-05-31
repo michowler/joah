@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+  <% if logged_in? %>
+  <div class="navbar-header">
+    <a class="navbar-brand joahh" id="joah-logo" href="/">Joahh</a>
+  </div>
+  <%end%>
+
+    <ul class="nav navbar-nav navbar-right">
+     <% if logged_in? %>
+      <li><a href="/users/<%=current_user.id%>"><span class="glyphicon glyphicon-user"></span><%= current_user.full_name %></a></li>
+       <li class="cart-text"><%= render 'layouts/cart_text' %></li>
+       <li><%= link_to 'Logout', sign_out_path, method: :delete %></li>
+      <% else %>
+      <li style="font-size:25px;cursor:pointer;color:grey;margin-top: 10px;display:inline-block;margin-right: 25px;" onclick="openNav()">help?</li>
+      <div id="mySidenav" class="sidenav" style="display:block;">
+        <a style="font-family: 'Barrio', cursive; font-size:30px" href="/"><u>Joahh</u></a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"><%= link_to 'Login', '/sign_in', class:"glyphicon glyphicon-user" %></a>
+        <a href="#"><%= link_to 'Signup', '/sign_up', class:"glyphicon glyphicon-log-out" %></a>
+      </div>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+

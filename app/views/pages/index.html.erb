@@ -1,9 +1,6 @@
-<h1 style="margin:auto;text-align: center">JOAHH</h1>
-
 <div class="container">
-
+<h1 class="joahh"> Joahh </h1>
 <%= form_tag(products_path, :method => "get") do %>
-  <%= label_tag(:search, "Search:") %>
   <%= text_field_tag(:search) %>
   <%= submit_tag "Search", :name => nil %>
 <%end%>
@@ -23,7 +20,7 @@
 	           <div class="caption">
 	             <h4><%= link_to p.title, product_path(p.id) %></h4>
 	             <p><span class="price">RM<%= p.price %></span></p>		
-	             <p><a href="/products/<%=p.id%>" class="btn btn-primary" role="button">BUY</a></p>
+	             <p><a href="/products/<%=p.id%>" class="btn btn-primary" role="button">More info</a></p>
 	           </div>
 	         </div>
 	       </div>

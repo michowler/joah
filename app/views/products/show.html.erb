@@ -5,15 +5,19 @@
        <div class="column">
          <div class="col-sm-6 col-md-4">
            <div class="thumbnail">
-          
+            <% if @product.photos? %>
+            <img><%= image_tag @product.photos.first.medium, class:"img-response" %></img>
+            <% else %> 
+              <img src="..." alt="...">
+            <%end%>
              <div class="caption">
                <h4><%= link_to @product.title, @product %></h4>
                <p><span class="price">RM<%= @product.price %></span></p>   
                <p><span href="/products/<%=@product.id%>"><%= @product.description %></span></p>
                <p><span href="/products/<%=@product.id%>">
-                 <li><%= @product.category_type %></li>
-                 <li><%= @product.area %></li>
-               </span></p>
+                 <li><%= @product.category_type %></li><br>
+                 <p><%= @product.area %></p>
+               </span>
              </div>
            </div>
          </div>
@@ -22,6 +26,7 @@
   </div>
 </div>
 
+<%if logged_in?%>
      <div class="row">
        <div class="col-xs-6 col-xs-offset-3">
          
@@ -50,5 +55,5 @@
          <% end %>
        </div>
      </div>
-
+ <% end %>
  

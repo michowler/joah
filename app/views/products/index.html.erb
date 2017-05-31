@@ -1,14 +1,19 @@
+<div class="container">
 <% if @products.blank? %>
   <h4>There are no listings containing your search "<%=params[:search]%>".</h4>
 <% else %>
-  <div class="container">
+
       <div class="row">
          <div class="col-md-12">
         <% @products.each do |p| %>
            <div class="column">
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail">
-              
+                <% if p.photos? %>
+                <img><%= image_tag p.photos.first.medium, class:"img-response" %></img>
+                <% else %> 
+                  <img src="..." alt="...">
+                <%end%>
                  <div class="caption">
                    <h4><%= link_to p.title, product_path(p.id) %></h4>
                    <p><span class="price">RM<%= p.price %></span></p>   
@@ -19,5 +24,6 @@
            </div>
         <% end %>
       </div>
- <% end %>      
+ <% end %>  
+ <%= will_paginate @products, renderer: BootstrapPagination::Rails, previous_label: "Back", next_label: "More", inner_window: 1, outer_window: 0 %>    
    
