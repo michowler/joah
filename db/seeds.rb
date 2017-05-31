@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy
+User.delete_all
 user = {}
 ActiveRecord::Base.transaction do
   35.times do 
@@ -17,7 +17,7 @@ ActiveRecord::Base.transaction do
   end
 end 
 
-Product.destroy
+Product.delete_all
 product = {}
 uids = []
 User.all.each { |u| uids << u.id }
