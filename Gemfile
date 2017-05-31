@@ -63,7 +63,8 @@ gem 'foreman'
 gem 'rails_12factor', group: :production
 #words
 gem 'time_ago_in_words'
-
+#map
+gem 'google_maps_service'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
