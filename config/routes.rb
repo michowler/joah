@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 	resources :order_items, only: [:create, :update, :destroy]
 	resources :products
 
+	get '/public' => 'products#public'
+	get '/private' => 'products#private'
 	get 'braintree/new'
 	post 'braintree/checkout'
 

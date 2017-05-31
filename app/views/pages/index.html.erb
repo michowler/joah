@@ -20,7 +20,6 @@
 	           <div class="caption">
 	             <h4><%= link_to p.title, product_path(p.id) %></h4>
 	             <p><span class="price">RM<%= p.price %></span></p>		
-	             <p><a href="/products/<%=p.id%>" class="btn btn-primary" role="button">More info</a></p>
 	           </div>
 	         </div>
 	       </div>
@@ -29,4 +28,5 @@
 	   </div>
 	</div>
 </div>
+
 <%= will_paginate @products, renderer: BootstrapPagination::Rails, previous_label: "Back", next_label: "More", inner_window: 1, outer_window: 0 %>

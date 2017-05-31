@@ -8,9 +8,11 @@
 
     <ul class="nav navbar-nav navbar-right">
      <% if logged_in? %>
-      <li><a href="/users/<%=current_user.id%>"><span class="glyphicon glyphicon-user"></span><%= current_user.full_name %></a></li>
+      <li><a href="/users/<%=current_user.id%>" ><span class="glyphicon glyphicon-user"></span><%= current_user.full_name %></a></li>
+       <li ><%= link_to 'Private', private_path %></li>
+        <li ><%= link_to 'Public', public_path %></li>
        <li class="cart-text"><%= render 'layouts/cart_text' %></li>
-       <li><%= link_to 'Logout', sign_out_path, method: :delete %></li>
+       <li ><%= link_to 'Logout', sign_out_path, method: :delete %></li>
       <% else %>
       <li style="font-size:25px;cursor:pointer;color:grey;margin-top: 10px;display:inline-block;margin-right: 25px;" onclick="openNav()">help?</li>
       <div id="mySidenav" class="sidenav" style="display:block;">

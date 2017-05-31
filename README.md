@@ -2,7 +2,7 @@
 
 Welcome everyone!
 
-JOAHH is ehhh Mudah clone? check it out! http://joahh.herokuapp.com
+JOAHH is ehhh Mudah clone?(not really..) check it out! http://joahh.herokuapp.com
 
 This is an app which consists of :
 

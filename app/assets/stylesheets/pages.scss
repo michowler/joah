@@ -49,6 +49,6 @@
     font-size:25px;
 }
 
-.navbar .brand, .navbar .nav,  > li > a:hover {
-    color: black;
+.navbar:hover {
+    color: black !important;
 }

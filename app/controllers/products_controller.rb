@@ -51,6 +51,14 @@ class ProductsController < ApplicationController
 		
 	end
 
+	def private
+		@products = Product.where(type_of_condition:false).paginate(:page => params[:page], :per_page => 6).order('id DESC')
+	end
+
+	def public
+		@products = Product.where(type_of_condition:true).paginate(:page => params[:page], :per_page => 6).order('id DESC')
+	end
+
 	private 
 	def find_product
 		@product = Product.find(params[:id])

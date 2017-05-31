@@ -55,15 +55,17 @@ ActiveRecord::Schema.define(version: 20170530160756) do
 
   create_table "products", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "title",         null: false
-    t.string   "description"
+    t.string   "title",             null: false
+    t.boolean  "type_of_condition"
     t.integer  "area"
     t.integer  "category_type"
-    t.integer  "price",         null: false
+    t.integer  "price",             null: false
     t.string   "location"
     t.boolean  "active"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "contact"
+    t.string   "address"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.json     "photos"
     t.index ["title"], name: "index_products_on_title", using: :btree
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
@@ -72,6 +74,7 @@ ActiveRecord::Schema.define(version: 20170530160756) do
   create_table "users", force: :cascade do |t|
     t.string   "full_name",       null: false
     t.string   "email",           null: false
+    t.string   "contact"
     t.string   "password"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
