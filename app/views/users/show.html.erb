@@ -1,25 +1,36 @@
 <div class="container">
-  <h1>Welcome <%= @user.full_name %></h1>
+  <h1>Welcome <%= current_user.full_name %></h1>
   <div><%= link_to "Edit Profile", edit_user_path(@user), class:"btn btn-primary"%></div><br>
   <div><%= link_to "Sell", new_product_path, class:"btn btn-primary" %></div><br>
 
-     <div class="row">
-        <div class="col-md-12">
-       <% @user.products.each do |p| %>
-        
-          <div class="column">
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-             
-                <div class="caption">
-                  <h4><%= link_to p.title, product_path(p.id) %></h4>
-                  <p><span class="price">RM<%= p.price %></span></p>   
+<h2>My products</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th>Action</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@user.products.each do |p|%>
+    <tr>
+      <td><%= link_to p.title, product_path(p.id) %></td>
+      <td><%= "not sold " if p.active? == true%></td>
+      <td>RM<%=p.price%></td>
+    
+      <td>
+        <%= link_to "Edit", edit_product_path(p), class:"btn btn-default"%>
+        <%= link_to "Delete", product_path(p), method:"delete", class:"btn btn-danger"%>
+      </td>
 
-                  <div><%= link_to "Edit", edit_product_path(p), class:"btn btn-primary"%></div><br>
-                </div>
-              </div>
-            </div>
-          </div>
-       <% end %>
-     </div>
-</div>    
+      <td></td>
+ 
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+</div>

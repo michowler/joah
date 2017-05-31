@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		redirect_to @product
+		redirect_to "/users/#{@product.user_id}"
 	end
 
 	def show
@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
 	end
 
 	def product_params
-	    params.require(:product).permit(:title, :description, :location, :category_type, :area, :price, {:photos => []})
+	    params.require(:product).permit(:title, :type_of_condition, :location, :category_type, :area, :price, {:photos => []})
 	end
 
 	def require_login

@@ -4,14 +4,13 @@
 </div>
 
 <div class="upload-field">
-  <%= form.label :upload %>
-  <%= form.file_field :photos, multiple: true %>
+  Upload <%= form.file_field :photos, multiple: true %>
 </div>  
 
-<div class="description-field">
-  <%= form.label :description %>
-  <%= form.text_field :description %>
+<div class="condition-field">
+  (Check box for public) <%= form.check_box :type_of_condition %> <br />
 </div>
+
 
 <div class="location-field">
   <%= form.label :location %>

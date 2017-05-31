@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 	include PgSearch
-	pg_search_scope :quick_search, against: [:title, :description, :price, :area, :location, :category_type]
+	pg_search_scope :quick_search, against: [:title, :type_of_condition, :price, :area, :location, :category_type]
 
 	belongs_to :user
 	has_many :order_items, :dependent => :destroy

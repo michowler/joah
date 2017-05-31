@@ -8,8 +8,8 @@
 
     <ul class="nav navbar-nav navbar-right">
      <% if logged_in? %>
-      <li><a href="/users/<%=current_user.id%>" ><span class="glyphicon glyphicon-user"></span><%= current_user.full_name %></a></li>
-       <li ><%= link_to 'Private', private_path %></li>
+      <li><a id="joah2-logo" href="/users/<%=current_user.id%>" ><span class="glyphicon glyphicon-user"></span><%= current_user.full_name %></a></li>
+       <li id="joah3-logo"><%= link_to 'Private', private_path %></li>
         <li ><%= link_to 'Public', public_path %></li>
        <li class="cart-text"><%= render 'layouts/cart_text' %></li>
        <li ><%= link_to 'Logout', sign_out_path, method: :delete %></li>
