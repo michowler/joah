@@ -19,13 +19,13 @@ class UsersController < ApplicationController
 	    flash[:success] = "Hi, welcome to Joahh!"
 	    redirect_to '/'
 	  else
-	  	flash[:danger] = user.errors.full_messages
+	  	flash[:danger] = user.errors.full_messages 
 	    redirect_to '/sign_up'
 	  end
 	end
 
 	private
 	def user_params
-	  params.require(:user).permit(:full_name, :email, :password, :password_confirmation)
+	  params.require(:user).permit(:full_name, :email, :password, :contact, :password_confirmation)
 	end
 end

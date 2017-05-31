@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 			flash[:success] = "Welcome back!"
 			redirect_to '/'
 		else
+		    flash[:danger] = user.errors.full_messages if user.errors.any?
 			redirect_to '/sign_in'
 		end
 	end

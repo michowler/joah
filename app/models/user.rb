@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	include PgSearch
 
-	validates :full_name, :email, :presence => true
+	validates :full_name, :email, :password, :presence => true
 	validates_uniqueness_of :email
 	validate :password_validator, :email_validator
 	before_create :password_validator, :email_validator

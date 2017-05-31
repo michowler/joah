@@ -25,5 +25,6 @@ Rails.application.routes.draw do
 	post '/users' => 'users#create'
 
 	get "/auth/:provider/callback" => "sessions#create_facebook"
+	get "*path" => redirect("/")
 
 end

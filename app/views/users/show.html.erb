@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Welcome <%= current_user.full_name %></h1>
-  <div><%= link_to "Edit Profile", edit_user_path(@user), class:"btn btn-primary"%></div><br>
-  <div><%= link_to "Sell", new_product_path, class:"btn btn-primary" %></div><br>
+  <div><%= link_to "Edit Profile", edit_user_path(current_user.id), class:"btn btn-default"%><br>
+  <%= link_to "Sell", new_product_path, class:"btn btn-deafult" %></div><br>
 
 <h2>My products</h2>
 <table class="table table-hover">
@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <%@user.products.each do |p|%>
+    <%current_user.products.each do |p|%>
     <tr>
       <td><%= link_to p.title, product_path(p.id) %></td>
       <td><%= "not sold " if p.active? == true%></td>

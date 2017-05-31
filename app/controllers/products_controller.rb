@@ -22,7 +22,6 @@ class ProductsController < ApplicationController
 		if @product.save
 			redirect_to @product
 		else
-
 			redirect_to @product, notice: "Sorry. product not saved."
 		end	
 	end
