@@ -15,8 +15,6 @@ gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
-gem "font-awesome-rails"
-gem 'bourbon'
 #gem 'foundation-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -64,7 +62,6 @@ gem 'rails_12factor', group: :production
 #words
 gem 'time_ago_in_words'
 #map
-gem 'google_maps_service'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -8,7 +8,10 @@
     <br>
     <div class="avatar">
        <p class="login-input">EDIT PICTURE:</p><i> (Optional)</i></p>
-      <%= form.file_field :avatar %>
+       <img />
+       <div class="form-control">
+        <%= form.file_field :avatar %>
+      </div>
     </div> 
 
     <br>
@@ -25,7 +28,7 @@
 
     <br>
     <div class="submit-field">
-      <%= form.submit, class:"btn btn-default" %>
+      <%= form.submit %>
     </div>
   </form>
 
